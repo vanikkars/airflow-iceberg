@@ -26,7 +26,10 @@ The dataset captures 148,770 total bookings across multiple vehicle types and pr
 - `landing`: Raw data load (append-only).
 - `staging`: Data cleaning, type casting, flattening nested JSON, incremental updates.
 - `marts`: Curated tables for analysis (e.g. `uber_rides`, `uber_rides_daily_metrics`)
+
 all the layer are build via `dbt`+`Trino` in Iceberg.
+
+Beware, nessie catalog does not support Views in Iceberg. Thus, the demo uses either tables or incremental tables where appropriate.
 
 ## Dashboarding
 
